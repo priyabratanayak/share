@@ -85,7 +85,7 @@ def main():
         cwd=os.path.join(os.getcwd(),"Share Trading Zerodha")
         #generate trading session
         
-        st.subheader(os.path.abspath("../access_token.txt"))
+        st.subheader(os.path.join(os.getcwd(), "../../access_token.txt"))
         access_token = open(os.path.abspath("../access_token.txt"),'r').read().split()
         key_secret = open(os.path.abspath("../api_key.txt"),'r').read().split()
         kite = KiteConnect(api_key=key_secret[0])
