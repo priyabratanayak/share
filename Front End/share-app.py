@@ -3,7 +3,7 @@ import pandas as pd
 
 from kiteconnect import KiteConnect
 import os
-import connect
+#import connect
 import plotly.express as px
 import plotly.graph_objects as go
 # Security
