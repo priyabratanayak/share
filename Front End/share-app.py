@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-
+from pathlib import Path
 from kiteconnect import KiteConnect
 import os
 #import connect
@@ -84,7 +84,12 @@ def main():
         
         cwd=os.path.join(os.getcwd(),"Share Trading Zerodha")
         #generate trading session
-        
+        st.subheader(os.path.join(os.getcwd()))
+	
+	cwd = Path.cwd()
+	st.subheader(cwd)
+	goal_dir = cwd.parent.parent / "access_token.txt"
+	st.subheader(goal_dir)
         st.subheader(os.path.join(os.getcwd(), "../../access_token.txt"))
         access_token = open(os.path.abspath("../access_token.txt"),'r').read().split()
         key_secret = open(os.path.abspath("../api_key.txt"),'r').read().split()
