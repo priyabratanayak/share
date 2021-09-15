@@ -85,7 +85,6 @@ def main():
         cwd=os.path.join(os.getcwd(),"Share Trading Zerodha")
         #generate trading session
         st.subheader(os.path.join(os.getcwd()))
-	
 	cwd = Path.cwd()
 	st.subheader(cwd)
 	goal_dir = cwd.parent.parent / "access_token.txt"
