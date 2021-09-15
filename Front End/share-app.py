@@ -84,16 +84,14 @@ def main():
         
         cwd=os.path.join(os.getcwd(),"Share Trading Zerodha")
         #generate trading session
-        st.subheader(os.path.join(os.getcwd()))
+        #st.subheader(os.path.join(os.getcwd()))
         cwd = Path.cwd()
         
         goal_dir = cwd.parent.parent / "access_token.txt"
-        st.subheader(os.path.isfile(goal_dir))
-        st.subheader(os.path.isfile(os.path.join(os.getcwd(), "access_token.txt")))
-       
-        st.subheader(os.path.isfile(os.path.join(os.getcwd(), "../access_token.txt")))
-        access_token = open(os.path.abspath("../access_token.txt"),'r').read().split()
-        key_secret = open(os.path.abspath("../api_key.txt"),'r').read().split()
+        
+        #st.subheader(os.path.isfile(os.path.join(os.getcwd(), "access_token.txt")))
+        access_token = open(os.path.join(os.getcwd(), "access_token.txt"),'r').read().split()
+        key_secret = open(os.path.join(os.getcwd(), "api_key.txt"),'r').read().split()
         kite = KiteConnect(api_key=key_secret[0])
         kite.set_access_token(access_token[1].strip())
         # Fetch holding details
