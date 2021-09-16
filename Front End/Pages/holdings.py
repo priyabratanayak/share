@@ -40,8 +40,8 @@ def app():
         #access_token = open(os.path.join(os.getcwd(), "access_token.txt"),'r').read().split()
         #key_secret = open(os.path.join(os.getcwd(), "api_key.txt"),'r').read().split()
         #...............................................
-        st.session_state.access_token = open(os.path.join(os.getcwd(), "../../access_token.txt"),'r').read().split()
-        st.session_state.key_secret = open(os.path.join(os.getcwd(), "../../api_key.txt"),'r').read().split()
+        st.session_state.access_token = open(os.path.join(os.getcwd(), "access_token.txt"),'r').read().split()
+        st.session_state.key_secret = open(os.path.join(os.getcwd(), "api_key.txt"),'r').read().split()
         
         background_color='#F5F5F5'
         kite = KiteConnect(api_key=st.session_state.key_secret[0])
