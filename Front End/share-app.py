@@ -52,8 +52,6 @@ def main():
     # Create an instance of the app 
     app = MultiPage()    
     # Title of the main page
-    display = Image.open('5-oceans-map-for.jpg')
-    display = np.array(display)
     
     app.add_page("Holdings", holdings.app)
     app.add_page("Buy", buy.app)
