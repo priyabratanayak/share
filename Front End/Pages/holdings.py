@@ -22,9 +22,9 @@ from kiteconnect import KiteConnect
 def app():
         
         
-        display = Image.open('5-oceans-map-for.jpg')
-        display = np.array(display)
-        st.image(display, width = 400)
+        #display = Image.open('5-oceans-map-for.jpg')
+        #display = np.array(display)
+        #st.image(display, width = 400)
         
         #st.subheader(os.path.isfile(os.path.join(os.getcwd(), "access_token.txt")))
         if 'access_token' not in st.session_state:
