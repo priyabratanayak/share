@@ -30,10 +30,7 @@ def app():
         print(os.path.isfile(os.path.join(os.getcwd(), "../../access_token.txt")))
         print(os.path.isfile(os.path.join(os.getcwd(), "../../../access_token.txt")))
         #st.subheader(os.path.isfile(os.path.join(os.getcwd(), "access_token.txt")))
-        if 'access_token' not in st.session_state:
-            st.session_state['access_token']=None
-        if 'key_secret' not in st.session_state:
-            st.session_state['key_secret']=None
+        
         #...............................................
         #Use this path in Heroku
         

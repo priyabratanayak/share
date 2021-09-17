@@ -50,6 +50,14 @@ def text_downloader(raw_text,file,filename):
 def main():
     """Simple Login App"""
     # Create an instance of the app 
+    
+    if 'access_token' not in st.session_state:
+            st.session_state['access_token']=None
+    if 'key_secret' not in st.session_state:
+        st.session_state['key_secret']=None
+    if 'holding' not in st.session_state:
+            st.session_state['holding']=None
+           
     app = MultiPage()    
     # Title of the main page
     

@@ -27,21 +27,18 @@ def app():
         #st.subheader(os.path.join(os.getcwd()))
         cwd = Path.cwd()
         
-        goal_dir = cwd.parent.parent / "access_token.txt"
-        
-        #st.subheader(os.path.isfile(os.path.join(os.getcwd(), "access_token.txt")))
-        
         
         #...............................................
         #Use this path in Heroku
         
-        #access_token = open(os.path.join(os.getcwd(), "access_token.txt"),'r').read().split()
-        #key_secret = open(os.path.join(os.getcwd(), "api_key.txt"),'r').read().split()
+        access_token = open(os.path.join(os.getcwd(), "../access_token.txt"),'r').read().split()
+        key_secret = open(os.path.join(os.getcwd(), "../api_key.txt"),'r').read().split()
         #...............................................
         background_color='#F5F5F5'
-        kite = KiteConnect(api_key=st.session_state.key_secret[0])
-        kite.set_access_token(st.session_state.access_token[1].strip())
-    
+        
+        kite = KiteConnect(api_key=key_secret[0])
+        kite.set_access_token(access_token[1].strip())
+        
         # Fetch position details
         orders = kite.orders()
         
