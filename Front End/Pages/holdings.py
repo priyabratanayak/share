@@ -62,6 +62,7 @@ def app():
         holdings_df_to_display['Day chg.']=holdings_df_to_display['Day chg.'].round(2)
         holdings_df_to_display['Day chg.']=holdings_df_to_display['Day chg.'].apply(str)
         holdings_df_to_display['Day chg.']=holdings_df_to_display['Day chg.']+"%"
+        st.session_state.holding=holdings_df_to_display.copy()
         holdings_df_to_display.index = np.arange(1, len(holdings_df_to_display) + 1)
         st.subheader("Holdings ("+str(holdings_df_to_display.shape[0])+")")
         fig=go.Figure(data=go.Table(

@@ -16,7 +16,7 @@ import numpy as np
 import base64
 import time
 from multipage import MultiPage
-from Pages import sell,buy,login,signup,holdings,positions,orders
+from Pages import sell,buy,login,signup,holdings,positions,orders,profits
 from PIL import  Image
 
 st.set_page_config(layout="wide")
@@ -59,6 +59,7 @@ def main():
     app.add_page("Sell", sell.app)
     app.add_page("Positions", positions.app)
     app.add_page("Orders", orders.app)
+    app.add_page("Today's Profit", profits.app)
     app.add_page("Login", login.app)
     app.add_page("Signup", signup.app)
     app.run()
