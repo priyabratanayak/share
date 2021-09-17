@@ -60,6 +60,22 @@ def app():
                                 )
         st.write(fig)  
         
-       
+        net_df=pd.DataFrame(orders) 
+        
+        net_df=net_df[['order_timestamp','transaction_type','tradingsymbol','product','quantity','average_price','status']]
+        net_df=net_df[net_df['status']=='COMPLETE']
+        net_df = net_df.rename({'order_timestamp':'Time','transaction_type':'Type','tradingsymbol':'Instrument','product':'Product',"quantity":'Qty.','average_price':'Avg.','status':'Status'}, axis='columns')
+        st.subheader("Executed orders With Status COMPLETE ("+str(net_df.shape[0])+")")
+        
+        net_df.index = np.arange(1, len(net_df) + 1)
+        fig=go.Figure(data=go.Table(
+            columnwidth=[0.1,0.1,0.2,0.1,0.1,0.1,0.1],
+            header=dict(values=list(["Row No.",'Time',"Type","Instrument",'Product',"Qty.","Avg.",'Status']),
+            fill_color='#FD8E72',align='center'),cells=dict(values=([net_df.index[:],net_df["Time"][0:].tolist(),net_df["Type"][0:].tolist(),net_df["Instrument"][0:].tolist(),net_df["Product"][0:].tolist(),net_df["Qty."][0:].tolist(),net_df["Avg."][0:].tolist(),net_df["Status"][0:].tolist()]))))    
+        fig.update_layout(width=1000,margin=dict(l=1,r=1,b=15,t=15),
+                                paper_bgcolor = background_color
+                                
+                                )
+        st.write(fig)  
 
 
